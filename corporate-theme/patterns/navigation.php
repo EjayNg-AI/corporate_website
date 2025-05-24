@@ -22,7 +22,7 @@ function corporate_theme_register_navigation_patterns() {
             'title'       => __( 'Main Navigation with Dropdowns', 'corporate-theme' ),
             'description' => __( 'A navigation menu with dropdown support for desktop and mobile.', 'corporate-theme' ),
             'categories'  => array( 'corporate-theme', 'header' ),
-            'content'     => '<!-- wp:navigation {"ref":4,"overlayMenu":"mobile","className":"nav","style":{"spacing":{"blockGap":"0"}},"fontSize":"medium"} -->
+            'content'     => '<!-- wp:navigation {"overlayMenu":"mobile","className":"nav","style":{"spacing":{"blockGap":"0"}},"fontSize":"medium"} -->
 <!-- wp:navigation-link {"label":"Home","url":"#","kind":"custom","isTopLevelLink":true} /-->
 <!-- wp:navigation-link {"label":"About","url":"#","kind":"custom","isTopLevelLink":true} /-->
 <!-- wp:navigation-submenu {"label":"Services","url":"#","kind":"custom","isTopLevelLink":true} -->
