@@ -88,5 +88,25 @@ function corporate_theme_load_patterns() {
 }
 add_action( 'init', 'corporate_theme_load_patterns', 7 );
 
+// Register custom block styles
+function corporate_theme_register_block_styles() {
+    if ( function_exists( 'register_block_style' ) ) {
+        register_block_style(
+            'core/button',
+            array(
+                'name'  => 'outline',
+                'label' => __( 'Outline', 'corporate-theme' ),
+            )
+        );
+    }
+}
+add_action( 'init', 'corporate_theme_register_block_styles' );
+
+// Dynamic copyright year shortcode
+function corporate_theme_current_year_shortcode() {
+    return date( 'Y' );
+}
+add_shortcode( 'current_year', 'corporate_theme_current_year_shortcode' );
+
 // WordPress core already provides header and footer template part areas
 // No need to re-register them
