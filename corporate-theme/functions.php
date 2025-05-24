@@ -43,9 +43,6 @@ function corporate_theme_setup() {
         'script',
     ) );
 
-    // Load theme text domain for translations
-    load_theme_textdomain( 'corporate-theme', get_stylesheet_directory() . '/languages' );
-
 }
 add_action( 'after_setup_theme', 'corporate_theme_setup' );
 
@@ -78,7 +75,7 @@ function corporate_theme_register_block_pattern_categories() {
     );
     
 }
-add_action( 'init', 'corporate_theme_register_block_pattern_categories', 8 );
+add_action( 'init', 'corporate_theme_register_block_pattern_categories', 6 );
 
 /**
  * Include block patterns
