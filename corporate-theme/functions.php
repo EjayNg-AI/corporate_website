@@ -32,8 +32,6 @@ function corporate_theme_setup() {
     // Add support for editor styles
     add_theme_support( 'editor-styles' );
 
-    // Add support for responsive embeds
-    add_theme_support( 'responsive-embeds' );
 
     // Add support for custom logo
     add_theme_support( 'custom-logo', array(
@@ -55,14 +53,11 @@ function corporate_theme_setup() {
         'caption',
         'style',
         'script',
-        'navigation-widgets',
     ) );
 
-    // Remove core block patterns
-    remove_theme_support( 'core-block-patterns' );
+    // Prevent WordPress from pulling patterns from the directory
+    add_filter( 'should_load_remote_block_patterns', '__return_false' );
 
-    // Add editor styles
-    add_editor_style( 'assets/css/style.css' );
 }
 add_action( 'after_setup_theme', 'corporate_theme_setup' );
 
@@ -70,14 +65,6 @@ add_action( 'after_setup_theme', 'corporate_theme_setup' );
  * Enqueue scripts and styles
  */
 function corporate_theme_scripts() {
-    // Main theme styles (skip style.css as it only contains header comment)
-    wp_enqueue_style( 
-        'corporate-theme-main', 
-        get_template_directory_uri() . '/assets/css/style.css', 
-        array(), 
-        wp_get_theme()->get( 'Version' ) 
-    );
-
     // Theme JavaScript
     wp_enqueue_script( 
         'corporate-theme-script', 
@@ -89,7 +76,7 @@ function corporate_theme_scripts() {
 
     // Add inline script for WordPress admin bar adjustment
     if ( is_admin_bar_showing() ) {
-        wp_add_inline_style( 'corporate-theme-main', '
+        wp_add_inline_style( 'wp-block-library', '
             .header { top: 32px; }
             @media screen and (max-width: 782px) {
                 .header { top: 46px; }
@@ -106,6 +93,21 @@ function corporate_theme_register_block_pattern_categories() {
     register_block_pattern_category(
         'corporate-theme',
         array( 'label' => esc_html__( 'Corporate Theme', 'corporate-theme' ) )
+    );
+    
+    register_block_pattern_category(
+        'banner',
+        array( 'label' => esc_html__( 'Banner', 'corporate-theme' ) )
+    );
+    
+    register_block_pattern_category(
+        'featured',
+        array( 'label' => esc_html__( 'Featured', 'corporate-theme' ) )
+    );
+    
+    register_block_pattern_category(
+        'columns',
+        array( 'label' => esc_html__( 'Columns', 'corporate-theme' ) )
     );
 }
 add_action( 'init', 'corporate_theme_register_block_pattern_categories', 8 );

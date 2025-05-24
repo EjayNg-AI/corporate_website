@@ -328,23 +328,6 @@
       }
     },
     "blocks": {
-      "core/button": {
-        "variations": {
-          "outline": {
-            "spacing": {
-              "padding": {
-                "top": "12px",
-                "right": "28px",
-                "bottom": "12px",
-                "left": "28px"
-              }
-            },
-            "border": {
-              "width": "2px"
-            }
-          }
-        }
-      },
       "core/navigation": {
         "typography": {
           "fontSize": "var(--wp--preset--font-size--medium)"

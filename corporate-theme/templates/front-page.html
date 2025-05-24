@@ -1,32 +1,26 @@
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
-<!-- wp:cover {"url":"https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80","dimRatio":50,"overlayColor":"light-primary","minHeight":420,"minHeightUnit":"px","contentPosition":"center center","className":"hero","style":{"spacing":{"padding":{"top":"0","bottom":"0"}}}} -->
-<div class="wp-block-cover hero" style="padding-top:0;padding-bottom:0;min-height:420px">
-    <span aria-hidden="true" class="wp-block-cover__background has-light-primary-background-color has-background-dim"></span>
-    <img class="wp-block-cover__image-background" alt="" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80" data-object-fit="cover"/>
-    <div class="wp-block-cover__inner-container">
-        <!-- wp:group {"className":"hero-content","layout":{"type":"constrained"}} -->
-        <div class="wp-block-group hero-content">
-            <!-- wp:heading {"textAlign":"center","level":1,"className":"hero-title","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"typography":{"fontSize":"2.8rem"}},"textColor":"white"} -->
-            <h1 class="wp-block-heading has-text-align-center hero-title has-white-color has-text-color has-link-color" style="font-size:2.8rem">Empowering Your Business for the Future</h1>
-            <!-- /wp:heading -->
-
-            <!-- wp:paragraph {"align":"center","className":"hero-subtitle","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white"} -->
-            <p class="has-text-align-center hero-subtitle has-white-color has-text-color has-link-color">Innovative solutions tailored for your success.</p>
-            <!-- /wp:paragraph -->
-
-            <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
-            <div class="wp-block-buttons">
-                <!-- wp:button {"className":"hero-cta","style":{"border":{"radius":"30px"}}} -->
-                <div class="wp-block-button hero-cta"><a class="wp-block-button__link wp-element-button" href="#contact" style="border-radius:30px">Get Started</a></div>
-                <!-- /wp:button -->
-            </div>
-            <!-- /wp:buttons -->
-        </div>
-        <!-- /wp:group -->
+<!-- wp:group {"className":"hero-section","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}},"backgroundColor":"light-primary","layout":{"type":"constrained"}} -->
+<div class="wp-block-group hero-section has-light-primary-background-color has-background" style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)">
+    <!-- wp:site-logo {"width":200,"isLink":false,"align":"center"} /-->
+    
+    <!-- wp:heading {"textAlign":"center","level":1,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"typography":{"fontSize":"2.8rem"},"spacing":{"margin":{"top":"var:preset|spacing|40"}}},"textColor":"white"} -->
+    <h1 class="wp-block-heading has-text-align-center has-white-color has-text-color has-link-color" style="font-size:2.8rem;margin-top:var(--wp--preset--spacing--40)">Empowering Your Business for the Future</h1>
+    <!-- /wp:heading -->
+    
+    <!-- wp:paragraph {"align":"center","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white"} -->
+    <p class="has-text-align-center has-white-color has-text-color has-link-color">Innovative solutions tailored for your success.</p>
+    <!-- /wp:paragraph -->
+    
+    <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
+    <div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--40)">
+        <!-- wp:button {"className":"is-style-outline","style":{"border":{"radius":"30px"},"color":{"background":"transparent","text":"#ffffff"},"elements":{"link":{"color":{"text":"#ffffff"}}}},"borderColor":"white"} -->
+        <div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-text-color has-background has-link-color has-border-color has-white-border-color wp-element-button" href="#contact" style="border-radius:30px;background-color:transparent;color:#ffffff">Get Started</a></div>
+        <!-- /wp:button -->
     </div>
+    <!-- /wp:buttons -->
 </div>
-<!-- /wp:cover -->
+<!-- /wp:group -->
 
 <!-- wp:group {"className":"section","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"backgroundColor":"light-bg","layout":{"type":"constrained"}} -->
 <div class="wp-block-group section has-light-bg-background-color has-background" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
