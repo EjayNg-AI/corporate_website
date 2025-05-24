@@ -1,0 +1,79 @@
+<!-- wp:group {"className":"header","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+<div class="wp-block-group header">
+    <!-- wp:group {"className":"logo","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+    <div class="wp-block-group logo">
+        <!-- wp:site-logo {"width":200,"shouldSyncIcon":false} /-->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:group {"className":"header-right-controls","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+    <div class="wp-block-group header-right-controls">
+        <!-- wp:navigation {"ref":4,"className":"nav","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"left"}} /-->
+        
+        <!-- wp:html -->
+        <button class="hamburger" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <!-- /wp:html -->
+        
+        <!-- wp:html -->
+        <button class="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
+            &#9790;
+        </button>
+        <!-- /wp:html -->
+    </div>
+    <!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:html -->
+<div class="overlay"></div>
+<nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+    <ul>
+        <li class="nav-item">
+            <a href="#" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">About</a>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" aria-haspopup="true" aria-expanded="false" type="button">
+                Services
+                <span class="arrow">&#9662;</span>
+            </button>
+            <div class="dropdown" role="menu">
+                <a href="#">Consulting</a>
+                <a href="#">Implementation</a>
+                <a href="#">Support</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" aria-haspopup="true" aria-expanded="false" type="button">
+                Solutions
+                <span class="arrow">&#9662;</span>
+            </button>
+            <div class="dropdown" role="menu">
+                <a href="#">Cloud</a>
+                <a href="#">On-Premise</a>
+                <a href="#">Hybrid</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" aria-haspopup="true" aria-expanded="false" type="button">
+                Resources
+                <span class="arrow">&#9662;</span>
+            </button>
+            <div class="dropdown" role="menu">
+                <a href="#">Blog</a>
+                <a href="#">Case Studies</a>
+                <a href="#">Webinars</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">Contact</a>
+        </li>
+    </ul>
+</nav>
+<!-- /wp:html -->
