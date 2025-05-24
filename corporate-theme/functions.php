@@ -31,6 +31,7 @@ function corporate_theme_setup() {
 
     // Add support for editor styles
     add_theme_support( 'editor-styles' );
+    add_editor_style( 'style.css' );
 
 
     // Add support for custom logo
@@ -55,11 +56,14 @@ function corporate_theme_setup() {
         'script',
     ) );
 
-    // Prevent WordPress from pulling patterns from the directory
-    add_filter( 'should_load_remote_block_patterns', '__return_false' );
+    // Load theme text domain for translations
+    load_theme_textdomain( 'corporate-theme', get_template_directory() . '/languages' );
 
 }
 add_action( 'after_setup_theme', 'corporate_theme_setup' );
+
+// Prevent WordPress from pulling patterns from the directory
+add_filter( 'should_load_remote_block_patterns', '__return_false' );
 
 /**
  * Enqueue scripts and styles
@@ -74,9 +78,13 @@ function corporate_theme_scripts() {
         true 
     );
 
+    // Register and enqueue a custom style handle for theme fixes
+    wp_register_style( 'corporate-fixes', false );
+    wp_enqueue_style( 'corporate-fixes' );
+
     // Add inline script for WordPress admin bar adjustment
     if ( is_admin_bar_showing() ) {
-        wp_add_inline_style( 'wp-block-library', '
+        wp_add_inline_style( 'corporate-fixes', '
             .header { top: 32px; }
             @media screen and (max-width: 782px) {
                 .header { top: 46px; }
@@ -95,20 +103,6 @@ function corporate_theme_register_block_pattern_categories() {
         array( 'label' => esc_html__( 'Corporate Theme', 'corporate-theme' ) )
     );
     
-    register_block_pattern_category(
-        'banner',
-        array( 'label' => esc_html__( 'Banner', 'corporate-theme' ) )
-    );
-    
-    register_block_pattern_category(
-        'featured',
-        array( 'label' => esc_html__( 'Featured', 'corporate-theme' ) )
-    );
-    
-    register_block_pattern_category(
-        'columns',
-        array( 'label' => esc_html__( 'Columns', 'corporate-theme' ) )
-    );
 }
 add_action( 'init', 'corporate_theme_register_block_pattern_categories', 8 );
 

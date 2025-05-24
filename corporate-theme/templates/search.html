@@ -1,14 +1,14 @@
-<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+<!-- wp:template-part {"slug":"header"} /-->
 
-<!-- wp:group {"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}},"layout":{"type":"constrained"}} -->
-<main class="wp-block-group" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)">
+<!-- wp:group {"style":{"spacing":{"margin":{"top":"0","bottom":"0"},"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80"}}},"layout":{"type":"constrained"},"tagName":"main"} -->
+<div class="wp-block-group" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)">
     <!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|60"}}}} -->
     <div class="wp-block-group alignwide" style="margin-bottom:var(--wp--preset--spacing--60)">
-        <!-- wp:heading {"level":1,"style":{"typography":{"fontSize":"3rem"}}} -->
-        <h1 style="font-size:3rem">Search Results</h1>
+        <!-- wp:heading {"level":1,"fontSize":"huge"} -->
+        <h1 class="has-huge-font-size">Search Results</h1>
         <!-- /wp:heading -->
 
-        <!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search...","width":100,"buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true,"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} /-->
+        <!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search...","width":100,"widthUnit":"%","buttonText":"Search","buttonPosition":"button-inside","buttonUseIcon":true,"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} /-->
     </div>
     <!-- /wp:group -->
 
@@ -17,19 +17,19 @@
         <!-- wp:post-template {"layout":{"type":"default"}} -->
             <!-- wp:group {"style":{"spacing":{"padding":{"bottom":"var:preset|spacing|60"}},"border":{"bottom":{"color":"var:preset|color|light-gray","width":"1px"}}},"layout":{"type":"default"}} -->
             <div class="wp-block-group" style="border-bottom-color:var(--wp--preset--color--light-gray);border-bottom-width:1px;padding-bottom:var(--wp--preset--spacing--60)">
-                <!-- wp:post-title {"isLink":true,"style":{"typography":{"fontSize":"2rem"},"spacing":{"margin":{"bottom":"var:preset|spacing|20"}}}} /-->
+                <!-- wp:post-title {"isLink":true,"fontSize":"xx-large","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|20"}}}} /-->
 
-                <!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap"},"style":{"spacing":{"gap":"var:preset|spacing|20","margin":{"bottom":"var:preset|spacing|30"}}}} -->
+                <!-- wp:group {"layout":{"type":"flex","wrap":"wrap"},"style":{"spacing":{"gap":"var:preset|spacing|20","margin":{"bottom":"var:preset|spacing|30"}}}} -->
                 <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--30)">
-                    <!-- wp:post-date {"style":{"typography":{"fontSize":"0.875rem"}}} /-->
-                    <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.875rem"}}} -->
-                    <p style="font-size:0.875rem">•</p>
+                    <!-- wp:post-date {"fontSize":"small"} /-->
+                    <!-- wp:paragraph {"fontSize":"small"} -->
+                    <p class="has-small-font-size">•</p>
                     <!-- /wp:paragraph -->
-                    <!-- wp:post-author-name {"isLink":true,"style":{"typography":{"fontSize":"0.875rem"}}} /-->
-                    <!-- wp:paragraph {"style":{"typography":{"fontSize":"0.875rem"}}} -->
-                    <p style="font-size:0.875rem">•</p>
+                    <!-- wp:post-author-name {"isLink":true,"fontSize":"small"} /-->
+                    <!-- wp:paragraph {"fontSize":"small"} -->
+                    <p class="has-small-font-size">•</p>
                     <!-- /wp:paragraph -->
-                    <!-- wp:post-terms {"term":"category","style":{"typography":{"fontSize":"0.875rem"}}} /-->
+                    <!-- wp:post-terms {"term":"category","fontSize":"small"} /-->
                 </div>
                 <!-- /wp:group -->
 
@@ -63,7 +63,7 @@
         <!-- /wp:query-no-results -->
     </div>
     <!-- /wp:query -->
-</main>
+</div>
 <!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

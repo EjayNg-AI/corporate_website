@@ -1,18 +1,18 @@
-<!-- wp:group {"className":"header","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+<!-- wp:group {"className":"header","layout":{"type":"flex","wrap":"nowrap","justifyContent":"space-between"}} -->
 <div class="wp-block-group header">
-    <!-- wp:group {"className":"logo","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+    <!-- wp:group {"className":"logo","layout":{"type":"flex","wrap":"nowrap"}} -->
     <div class="wp-block-group logo">
-        <!-- wp:site-logo {"width":200,"shouldSyncIcon":false} /-->
+        <!-- wp:site-logo {"width":200} /-->
     </div>
     <!-- /wp:group -->
 
-    <!-- wp:group {"className":"header-right-controls","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+    <!-- wp:group {"className":"header-right-controls","layout":{"type":"flex","wrap":"nowrap"}} -->
     <div class="wp-block-group header-right-controls">
         <!-- wp:navigation {"overlayMenu":"mobile","showSubmenuIcon":true,"className":"nav","style":{"spacing":{"blockGap":"0"}},"fontSize":"medium"} /-->
         
-        <!-- wp:html -->
-        <button class="theme-toggle" aria-label="Toggle light/dark mode" aria-pressed="false" title="Toggle light/dark mode">☾</button>
-        <!-- /wp:html -->
+        <!-- wp:button {"className":"theme-toggle","style":{"border":{"radius":"50%"},"spacing":{"padding":{"top":"8px","right":"8px","bottom":"8px","left":"8px"}},"color":{"background":"transparent","text":"currentColor"}},"fontSize":"medium"} -->
+        <div class="wp-block-button theme-toggle"><a class="wp-block-button__link wp-element-button" style="border-radius:50%;background-color:transparent;color:currentColor;padding-top:8px;padding-right:8px;padding-bottom:8px;padding-left:8px" aria-label="Toggle light/dark mode" data-theme-toggle>☾</a></div>
+        <!-- /wp:button -->
     </div>
     <!-- /wp:group -->
 </div>

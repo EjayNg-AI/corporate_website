@@ -143,7 +143,7 @@ function corporate_theme_register_patterns() {
     <h2 class="wp-block-heading has-text-align-center section-title">Our Services</h2>
     <!-- /wp:heading -->
 
-    <!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
+    <!-- wp:columns {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}}} -->
     <div class="wp-block-columns">
         <!-- wp:column -->
         <div class="wp-block-column">

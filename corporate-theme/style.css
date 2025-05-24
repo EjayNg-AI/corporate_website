@@ -22,7 +22,6 @@ This theme, like WordPress, is licensed under the GPL.
   --light-bg-alt: var(--wp--preset--color--light-bg-alt);
   --light-header: var(--wp--preset--color--light-header);
   --light-footer: var(--wp--preset--color--light-footer);
-  --light-footer-text: var(--wp--preset--color--white);
   --light-primary: var(--wp--preset--color--light-primary);
   --light-text: var(--wp--preset--color--light-text);
   --light-nav-hover: var(--wp--preset--color--light-bg-alt);
@@ -73,8 +72,8 @@ body.dark-mode .footer {
   background: var(--dark-footer);
   color: var(--dark-footer-text);
 }
-body.dark-mode .theme-toggle {
-  color: var(--dark-primary);
+body.dark-mode .theme-toggle .wp-block-button__link {
+  color: var(--dark-primary) !important;
 }
 
 /* ===== Header ===== */
@@ -112,16 +111,22 @@ body.dark-mode .theme-toggle {
 
 /* Light/Dark Toggle */
 .theme-toggle {
-  background: none;
+  flex-shrink: 0;
+}
+
+.theme-toggle .wp-block-button__link {
+  background: none !important;
   border: none;
   font-size: 1.5em;
   cursor: pointer;
-  color: var(--light-primary);
+  color: var(--light-primary) !important;
   transition: color 0.3s;
-  z-index: 100;
-  flex-shrink: 0;
-  padding: 0;
+  padding: 8px !important;
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 
 /* ===== WordPress Navigation Block Styles ===== */
@@ -211,7 +216,7 @@ body.dark-mode .wp-block-navigation__responsive-container.is-menu-open .wp-block
 /* ===== Footer ===== */
 .footer {
   background: var(--light-footer);
-  color: var(--light-footer-text);
+  color: var(--wp--preset--color--white);
   text-align: center;
   padding: 24px 0 16px 0;
   /* Use fluid typography from theme.json */
@@ -228,7 +233,7 @@ body.dark-mode .wp-block-navigation__responsive-container.is-menu-open .wp-block
   .logo img {
     max-height: 40px;
   }
-  .theme-toggle {
+  .theme-toggle .wp-block-button__link {
     font-size: 1.7em;
   }
   .section {

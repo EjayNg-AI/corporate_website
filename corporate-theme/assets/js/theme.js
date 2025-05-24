@@ -1,12 +1,11 @@
 (function() {
   'use strict';
 
-  // Wait for DOM to be ready
-  document.addEventListener('DOMContentLoaded', function() {
+  function initThemeToggle() {
     const body = document.body;
 
-    // Light/Dark mode toggle
-    const themeToggle = document.querySelector('.theme-toggle');
+    // Light/Dark mode toggle - now targets the button link or fallback to data attribute
+    const themeToggle = document.querySelector('.theme-toggle .wp-block-button__link') || document.querySelector('[data-theme-toggle]');
     
     function setTheme(dark) {
       if (dark) {
@@ -45,7 +44,8 @@
     }
 
     if (themeToggle) {
-      themeToggle.addEventListener('click', function() {
+      themeToggle.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default link behavior
         setTheme(!body.classList.contains('dark-mode'));
       });
     }
@@ -58,10 +58,11 @@
     if (typeof wp !== 'undefined' && wp.customize && wp.customize.selectiveRefresh) {
       wp.customize.selectiveRefresh.bind('partial-content-rendered', function() {
         // Re-initialize any dynamic elements after partial refresh
-        const newThemeToggle = document.querySelector('.theme-toggle');
+        const newThemeToggle = document.querySelector('.theme-toggle .wp-block-button__link') || document.querySelector('[data-theme-toggle]');
         if (newThemeToggle && !newThemeToggle.hasAttribute('data-initialized')) {
           newThemeToggle.setAttribute('data-initialized', 'true');
-          newThemeToggle.addEventListener('click', function() {
+          newThemeToggle.addEventListener('click', function(e) {
+            e.preventDefault();
             setTheme(!body.classList.contains('dark-mode'));
           });
           // Ensure proper state after refresh
@@ -71,7 +72,13 @@
         }
       });
     }
+  }
 
-  });
+  // Check if DOM is already loaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initThemeToggle);
+  } else {
+    initThemeToggle();
+  }
 
 })();
