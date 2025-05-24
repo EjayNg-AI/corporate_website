@@ -26,8 +26,8 @@ function corporate_theme_register_patterns() {
 <div class="wp-block-group hero-section has-light-primary-background-color has-background" style="padding-top:var(--wp--preset--spacing--80);padding-bottom:var(--wp--preset--spacing--80)">
     <!-- wp:site-logo {"width":200,"isLink":false,"align":"center"} /-->
     
-    <!-- wp:heading {"textAlign":"center","level":1,"style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"typography":{"fontSize":"2.8rem"},"spacing":{"margin":{"top":"var:preset|spacing|40"}}},"textColor":"white"} -->
-    <h1 class="wp-block-heading has-text-align-center has-white-color has-text-color has-link-color" style="font-size:2.8rem;margin-top:var(--wp--preset--spacing--40)">Empowering Your Business for the Future</h1>
+    <!-- wp:heading {"textAlign":"center","level":1,"fontSize":"huge","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}},"spacing":{"margin":{"top":"var:preset|spacing|40"}}},"textColor":"white"} -->
+    <h1 class="wp-block-heading has-text-align-center has-white-color has-text-color has-link-color has-huge-font-size" style="margin-top:var(--wp--preset--spacing--40)">Empowering Your Business for the Future</h1>
     <!-- /wp:heading -->
     
     <!-- wp:paragraph {"align":"center","style":{"elements":{"link":{"color":{"text":"var:preset|color|white"}}}},"textColor":"white"} -->
