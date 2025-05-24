@@ -1,12 +1,12 @@
 <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|10"}},"layout":{"type":"flex","wrap":"wrap"},"fontSize":"small"} -->
 <div class="wp-block-group has-small-font-size">
-    <!-- wp:post-author {"showAvatar":false,"showBio":false} /-->
+    <!-- wp:post-author {"showAvatar":false,"showBio":false,"isLink":true,"linkTarget":"_self"} /-->
     <!-- wp:html -->
-    <span>·</span>
+    <span class="post-meta-separator" aria-hidden="true">·</span>
     <!-- /wp:html -->
-    <!-- wp:post-date /-->
+    <!-- wp:post-date {"isLink":true} /-->
     <!-- wp:html -->
-    <span>·</span>
+    <span class="post-meta-separator" aria-hidden="true">·</span>
     <!-- /wp:html -->
     <!-- wp:post-terms {"term":"category"} /-->
 </div>

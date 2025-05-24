@@ -23,8 +23,6 @@ function corporate_theme_setup() {
     // Enable support for Post Thumbnails
     add_theme_support( 'post-thumbnails' );
 
-    // Add support for full and wide align blocks
-    add_theme_support( 'align-wide' );
 
     // Add support for block styles
     add_theme_support( 'wp-block-styles' );
@@ -33,17 +31,6 @@ function corporate_theme_setup() {
     add_theme_support( 'editor-styles' );
     add_editor_style( 'style.css' );
 
-
-    // Add support for custom logo
-    add_theme_support( 'custom-logo', array(
-        'height'      => 40,
-        'width'       => 200,
-        'flex-height' => true,
-        'flex-width'  => true,
-    ) );
-
-    // Add theme support for selective refresh for widgets
-    add_theme_support( 'customize-selective-refresh-widgets' );
 
     // Add support for HTML5
     add_theme_support( 'html5', array(
@@ -57,7 +44,7 @@ function corporate_theme_setup() {
     ) );
 
     // Load theme text domain for translations
-    load_theme_textdomain( 'corporate-theme', get_template_directory() . '/languages' );
+    load_theme_textdomain( 'corporate-theme', get_stylesheet_directory() . '/languages' );
 
 }
 add_action( 'after_setup_theme', 'corporate_theme_setup' );
@@ -73,24 +60,11 @@ function corporate_theme_scripts() {
     wp_enqueue_script( 
         'corporate-theme-script', 
         get_template_directory_uri() . '/assets/js/theme.js', 
-        array(), 
+        array( 'wp-dom-ready' ), 
         wp_get_theme()->get( 'Version' ), 
         true 
     );
 
-    // Register and enqueue a custom style handle for theme fixes
-    wp_register_style( 'corporate-fixes', false );
-    wp_enqueue_style( 'corporate-fixes' );
-
-    // Add inline script for WordPress admin bar adjustment
-    if ( is_admin_bar_showing() ) {
-        wp_add_inline_style( 'corporate-fixes', '
-            .header { top: 32px; }
-            @media screen and (max-width: 782px) {
-                .header { top: 46px; }
-            }
-        ' );
-    }
 }
 add_action( 'wp_enqueue_scripts', 'corporate_theme_scripts' );
 
@@ -109,10 +83,13 @@ add_action( 'init', 'corporate_theme_register_block_pattern_categories', 8 );
 /**
  * Include block patterns
  */
-if ( function_exists( 'register_block_pattern' ) ) {
-    require get_template_directory() . '/patterns/sections.php';
-    require get_template_directory() . '/patterns/navigation.php';
+function corporate_theme_load_patterns() {
+    if ( function_exists( 'register_block_pattern' ) ) {
+        require get_template_directory() . '/patterns/sections.php';
+        require get_template_directory() . '/patterns/navigation.php';
+    }
 }
+add_action( 'init', 'corporate_theme_load_patterns', 7 );
 
 // WordPress core already provides header and footer template part areas
 // No need to re-register them
